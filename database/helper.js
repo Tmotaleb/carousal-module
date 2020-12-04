@@ -1,6 +1,6 @@
 const {db, Carousal} = require('./index.js')
 
-var save = (input) => {
+var saveData = (input) => {
 
  return Carousal.insertMany(input)
   .then((data) => {
@@ -11,4 +11,4 @@ var save = (input) => {
   })
 }
 
-module.exports = {save};
+module.exports = {saveData};

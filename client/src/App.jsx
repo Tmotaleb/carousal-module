@@ -1,58 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDom from 'react-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import * as style from './styles/style.js';
+import * as style from '../public/styles/style.js';
 import Image_modal from './components/image_modal.jsx';
+import regeneratorRuntime from 'regenerator-runtime';
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-      this.state = {
-        data: null,
-      }
-      console.log(this.state.data)
-      // this.handleImageClick= this.handleImageClick.bind(this);
-      // this.handleButtonClick= this.handleButtonClick.bind(this);
-  }
+const App = () => {
+  const [photos, setPhotos] = useState({})
+  const [address, setAddress] = useState({})
 
-  componentDidMount() {
+  useEffect(() => {
     axios.get('/api/carousal')
       .then((response) => {
-        console.log(response.data, 'rd')
-        this.setState({data: response.data})
-        this.setState({photoData: response.data.photos})
+        console.log(response, 'rd')
+        setPhotos(response.data.photos);
+        setAddress(response.data.address);
       })
       .catch((error) => {
         console.log(error)
       })
-  }
+  }, []);
 
-  render() {
-    return (
-      <style.mainContainer>
-      <style.navContainer></style.navContainer>
-        <style.title></style.title>
-       {this.state.data ? this.state.data.map((item) => {
-        return <Image_modal photos={item.photos}/>
-       }):null}
-      </style.mainContainer>
-    )
-  }
+  return (
+    <style.mainContainer>
+    <style.navContainer></style.navContainer>
+      <style.title></style.title>
+      <Image_modal photos={photos}/>
+    </style.mainContainer>
+  )
 }
 
 ReactDom.render(<App />, document.getElementById('app'));
-
-
-// <style.mainContainer>
-// {/* <div className="main-container"> */}
-// <style.navContainer></style.navContainer>
-//   {/* <div className="nav-bar"></div> */}
-//   {/* <div className="title"></div> */}
-//   <style.title></style.title>
-//  {this.state.data ? this.state.data.map((item) => {
-//   return <Image_modal photos={item.photos}/>
-//  }):null}
-// {/* // </div> */}
-// </style.mainContainer>

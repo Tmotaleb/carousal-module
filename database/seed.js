@@ -18,14 +18,14 @@ const randomImage = (arr, num) => {
 
 //generate 100 listings
   for (var i = 0; i < 3; i++) {
-    var coffeeImage = randomImage(coffeeTable, 4);
+    var coffeeImage = randomImage(coffeeTable, 5);
     var spaceImage = randomImage(studySpace, 5);
 
       var fakeData = {
       address: faker.address.streetAddress(),
-      photos: [spaceImage[0], coffeeImage[1], spaceImage[1], coffeeImage[2], spaceImage[2], coffeeImage[3], spaceImage[3], spaceImage[4], coffeeImage[0]]
+      photos: [spaceImage[0], coffeeImage[1], spaceImage[1], coffeeImage[2], spaceImage[2],spaceImage[3], coffeeImage[3], spaceImage[4], coffeeImage[0]]
    }
   }
 
 var listing = new Carousal(fakeData)
-method.save(listing);
+method.saveData(listing);

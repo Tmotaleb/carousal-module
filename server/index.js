@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 
 app.get('/api/carousal', (req, res) => {
-  Carousal.find({})
+  Carousal.findOne({})
     .then((results) => {
       console.log(results)
       res.status(201).send(results);

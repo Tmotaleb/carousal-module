@@ -1,47 +1,49 @@
-import React from 'react';
-import * as style from '../styles/style.js';
+import React, {useState, useEffect} from 'react';
+import * as style from '../../public/styles/style.js';
+import styled from 'styled-components';
+import regeneratorRuntime from 'regenerator-runtime';
+import useModal from './useModal.js'
+import Modal from './Modal.jsx'
 
 var Image_modal = ({photos}) => {
+  // const [show, setShowModal] = useState(false)
+  // const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+
+  // const showModal = () => {
+  //   setShowModal(!show)
+  // }
+
+  // const closeModal = () => {
+  //   setShowModal(show)
+  // }
+  const {show, toggle} = useModal()
 
   return (
     <style.carousalContainer>
-
       <style.bigImageBlock>
-        <style.bigImage src={photos[0]}/>
+        <style.bigImage src={photos[0]} onClick={toggle}>{console.log('Clicked0')}</style.bigImage>
+        <Modal
+          show={show}
+          hide={toggle}
+        />
       </style.bigImageBlock>
 
       <style.sideImageBlock>
         <style.firstPicBlock>
-        <style.firstImage src={photos[1]}/>
+        <style.firstImage src={photos[1]} onClick={toggle}>{console.log('Clicked1')}</style.firstImage>
         </style.firstPicBlock>
 
         <style.secondPicBlock>
-          <style.btnContainer>
+          <style.btnContainer onClick={toggle}>
            <style.secondImage src={photos[2]}/>
-           <style.btnButton>See More</style.btnButton>
+           <style.btnButton>See More {console.log('button')}</style.btnButton>
           </style.btnContainer>
         </style.secondPicBlock>
 
      </style.sideImageBlock>
     </style.carousalContainer>
+
   )
 }
 
 export default Image_modal;
-
-
-{/* <div className="carousal-container">
-<div className="big-image-block">
-  <img className="big-image" src={photos[0]}/>
-</div>
-<div className="side-image-block">
-  <div className="first-pic-block">
-  <img className="first-image" src={photos[1]}/>
-  </div>
-  <div className="second-pic-block">
-    <div className="btn-container">
-     <img className="second-image" src={photos[2]}/>
-     <button className="btn">See More</button>
-    </div>
-  </div>
-</div> */}
