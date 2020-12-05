@@ -18,9 +18,6 @@ var Image_modal = ({photos}) => {
 
   // }
   const {show, toggle} = useModal()
-  const [slides] = useState(photos)
-
-  let [currentPosition, setCurrentPosition] = useState(0);
 
   return (
     <style.carousalContainer>

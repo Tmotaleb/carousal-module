@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
+import Slider from './Slider.jsx'
 
 const Modal = ({photos, show, hide}) => show ? ReactDOM.createPortal(
 
@@ -9,10 +10,10 @@ const Modal = ({photos, show, hide}) => show ? ReactDOM.createPortal(
       <div className='modal'>
         <div className='modal-header'>
           <button type='button' className='modal-close-button' data-dismiss='modal' aria-label='Close' onClick={hide}>
-            <span aria-hidden='true'>&times;Close</span>
+            <span aria-hidden='true'>&times; Close</span>
           </button>
         </div>
-        <p>I am a Modal</p>
+        <Slider photos={photos}/>
       </div>
     </div>
   </React.Fragment>, document.body
