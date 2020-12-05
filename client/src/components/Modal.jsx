@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 
-const Modal = ({show, hide}) => show ? ReactDOM.createPortal(
+const Modal = ({photos, show, hide}) => show ? ReactDOM.createPortal(
 
   <React.Fragment>
     <div className='modal-overlay'/>

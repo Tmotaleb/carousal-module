@@ -15,8 +15,12 @@ var Image_modal = ({photos}) => {
 
   // const closeModal = () => {
   //   setShowModal(show)
+
   // }
   const {show, toggle} = useModal()
+  const [slides] = useState(photos)
+
+  let [currentPosition, setCurrentPosition] = useState(0);
 
   return (
     <style.carousalContainer>
@@ -25,6 +29,7 @@ var Image_modal = ({photos}) => {
         <Modal
           show={show}
           hide={toggle}
+          photos={photos}
         />
       </style.bigImageBlock>
 
