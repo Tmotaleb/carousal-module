@@ -6,17 +6,7 @@ import useModal from './useModal.js'
 import Modal from './Modal.jsx'
 
 var Image_modal = ({photos}) => {
-  // const [show, setShowModal] = useState(false)
-  // const showHideClassName = show ? 'modal display-block' : 'modal display-none';
 
-  // const showModal = () => {
-  //   setShowModal(!show)
-  // }
-
-  // const closeModal = () => {
-  //   setShowModal(show)
-
-  // }
   const {show, toggle} = useModal()
 
   return (
@@ -44,7 +34,6 @@ var Image_modal = ({photos}) => {
 
      </style.sideImageBlock>
     </style.carousalContainer>
-
   )
 }
 
