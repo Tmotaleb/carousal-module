@@ -10,7 +10,7 @@ const Modal = ({photos, show, hide}) => show ? ReactDOM.createPortal(
       <div className='modal'>
         <div className='modal-header'>
           <button type='button' className='modal-close-button' data-dismiss='modal' aria-label='Close' onClick={hide}>
-            <span aria-hidden='true'>&times; Close</span>
+            <span aria-hidden='true'>Close</span>
           </button>
         </div>
         <Slider photos={photos}/>
