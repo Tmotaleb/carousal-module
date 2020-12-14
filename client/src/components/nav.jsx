@@ -7,11 +7,11 @@ import {BsPerson} from 'react-icons/Bs';
 
 var NavBar = () => {
 
-  var img = 'https://mylogo-bucket.s3-us-west-1.amazonaws.com/WorkingTree+logo.png'
+  var img = 'https://mylogo-bucket.s3-us-west-1.amazonaws.com/FinalLogo.jpg'
 
   return (
     <style.navContainer>
-      <img className='logo'/>
+      <img className='logo' src={img}/>
       <nav>
         <ul className='nav_links'>
           <li><a href='#'>Workspace</a></li>
