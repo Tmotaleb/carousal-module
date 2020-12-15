@@ -14,6 +14,7 @@ import {BiShareAlt} from 'react-icons/Bi';
 const App = () => {
   const [photos, setPhotos] = useState({})
   const [address, setAddress] = useState(null)
+  const [descriptionTxt, setDescriptionTxt] = useState('')
 
   useEffect(() => {
     axios.get('/api/carousal')
@@ -21,6 +22,7 @@ const App = () => {
         console.log(response, 'rd')
         setPhotos(response.data.photos);
         setAddress(response.data.address);
+        setDescriptionTxt(response.data.descriptionTxt)
       })
       .catch((error) => {
         console.log(error)
@@ -38,7 +40,7 @@ const App = () => {
         </style.buttonBar>
       </style.location>
       <Image_modal photos={photos}/>
-      <Description address={address}/>
+      <Description address={address} descriptionTxt={descriptionTxt}/>
       <style.footer></style.footer>
     </style.mainContainer>
   )

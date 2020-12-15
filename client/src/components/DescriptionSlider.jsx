@@ -7,9 +7,9 @@ import regeneratorRuntime from 'regenerator-runtime';
 var DescriptionSlider = () => {
 
   return (
-    <style.amenitiesBox>
-      <style.amenitiesTitle>AMENITIES & SERVICES</style.amenitiesTitle>
-    </style.amenitiesBox>
+    <style.officeSlider>
+      <style.officeTitle>OFFICE ARRANGEMENTS</style.officeTitle>
+    </style.officeSlider>
   )
 }
 

@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import * as style from '../../public/styles/style.js';
 import styled from 'styled-components';
 import regeneratorRuntime from 'regenerator-runtime';
-import DescriptionSlider from './DescriptionSlider.jsx'
+import DescriptionSlider from './DescriptionSlider.jsx';
+import Amenities from './Amenities.jsx'
 
 
-var Description = ({address}) => {
+var Description = ({address, descriptionTxt}) => {
 
 
   return (
@@ -14,13 +15,12 @@ var Description = ({address}) => {
 
         <style.description>
           <style.descriptionTitle>DESCRIPTION</style.descriptionTitle>
+          <style.descriptionTxt>{descriptionTxt}</style.descriptionTxt>
         </style.description>
 
-        <style.officeSlider>
-          <style.officeTitle>OFFICE ARRANGEMENTS</style.officeTitle>
-        </style.officeSlider>
-
         <DescriptionSlider/>
+
+        <Amenities/>
 
       </style.leftColumn>
       <style.rightColumn></style.rightColumn>

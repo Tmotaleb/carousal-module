@@ -13,7 +13,8 @@ db.once('open', ()=> {console.log('Mongodb is running!')});
 
 const CarousalSchema = new mongoose.Schema({
   address: String,
-  photos: Array
+  photos: Array,
+  descriptionTxt: String
 });
 
 const Carousal = mongoose.model('Carousal', CarousalSchema);
