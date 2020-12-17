@@ -54,7 +54,7 @@ var Amenities = () => {
       </style.col3>
 
     </style.amenitiesContainer>
-    <style.amenities_btn></style.amenities_btn>
+    <style.amenities_btn>See All</style.amenities_btn>
   </style.amenitiesBox>
   )
 }
