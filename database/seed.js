@@ -25,7 +25,7 @@ const randomImage = (arr, num) => {
       var fakeData = {
       address: address,
       photos: [spaceImage[0], coffeeImage[1], spaceImage[1], coffeeImage[2], spaceImage[2],spaceImage[3], coffeeImage[3], spaceImage[4], coffeeImage[0]],
-      descriptionTxt: `Office space located at ${address}, with high ceilings and lots of natural lighting. We offer complementary high speed wifi, phone booth access, kitchen available with fridge, freezer, microwave, filtered water and unlimited coffee/tea. Members have access to roof deck, terrace and lounge areas. Conference rooms are fully equipped and on site upon request and for a limited time only.`
+      descriptionTxt: `Office space located at ${address}, with high ceilings and lots of natural lighting. We offer complementary high speed wifi, phone booth access, kitchen available with fridge, freezer, microwave, filtered water and unlimited coffee/tea. Members have access to roof deck, terrace and lounge areas. Conference rooms are fully equipped and on site upon request and for a limited time only.`,
    }
   }
 
