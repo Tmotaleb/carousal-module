@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import * as style from '../public/styles/style.js';
 import Image_modal from './components/Image_modal.jsx';
 import NavBar from './components/Nav.jsx';
+import Footer from './components/Footer.jsx';
 import Description from './components/Description.jsx'
 import regeneratorRuntime from 'regenerator-runtime';
 import {VscHeart} from 'react-icons/Vsc';
@@ -41,7 +42,7 @@ const App = () => {
       </style.location>
       <Image_modal photos={photos}/>
       <Description address={address} descriptionTxt={descriptionTxt}/>
-      <style.footer></style.footer>
+      <Footer/>
     </style.mainContainer>
   )
 }

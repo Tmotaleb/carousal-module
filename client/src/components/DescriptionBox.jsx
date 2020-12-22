@@ -18,7 +18,6 @@ var DescriptionBox = () => {
   return (
     <style.officeSlider>
       <style.officeTitle>OFFICE ARRANGEMENTS</style.officeTitle>
-
       <style.sliderContainer>
         {items.map((item) =>
           <style.items className='view'>
@@ -29,9 +28,7 @@ var DescriptionBox = () => {
             <style.itemDescription>{item.title}</style.itemDescription>
           </style.items>
         )}
-
       </style.sliderContainer>
-
     </style.officeSlider>
   )
 }

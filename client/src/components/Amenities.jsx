@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import * as style from '../../public/styles/style.js';
+import regeneratorRuntime from 'regenerator-runtime';
 import styled from 'styled-components';
 import {GrWifi} from 'react-icons/Gr';
 import {ImSpoonKnife} from 'react-icons/Im';
@@ -11,15 +12,11 @@ import {BsDroplet} from 'react-icons/Bs';
 import {GiSofa} from 'react-icons/Gi';
 import {FiPhoneCall} from 'react-icons/Fi';
 import {AiOutlinePrinter} from 'react-icons/Ai';
-import regeneratorRuntime from 'regenerator-runtime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
 import { faWheelchair } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
-
-// import { fas fa-wifi } from '@fortawesome/free-solid-svg-icons'
-// const element = <FontAwesomeIcon icon={faCoffee} />
 
 
 var Amenities = () => {
