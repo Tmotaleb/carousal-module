@@ -7,19 +7,10 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 var MoreSpacesBox = ({data}) => {
 
-  console.log(data, 'sdhsdkfh')
-  var items = [{img:'ege'}, {img:'ge'}, {img:'ge'}, {img:'ge'}]
-
   return (
     <style.morespaces>
-
-      <style.titleBox className='moreSpace-title'>
-          <li>Explore More</li>
-          <li><a className='title2'>Workspace</a></li>
-      </style.titleBox>
-
+      <style.titleBox>EXPLORE MORE SPACES</style.titleBox>
       <style.contentBox>
-
         <style.content>
         {data.map((item)=>
           <style.contentbubble>
@@ -38,8 +29,6 @@ var MoreSpacesBox = ({data}) => {
           </style.contentbubble>
           )}
         </style.content>
-
-
       </style.contentBox>
     </style.morespaces>
   )
