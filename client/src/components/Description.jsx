@@ -7,7 +7,9 @@ import Amenities from './Amenities.jsx';
 import MoreSpacesBox from './MoreSpacesBox.jsx';
 
 
-var Description = ({address, descriptionTxt, moreSpacesInfo}) => {
+var Description = ({address, descriptionTxt, dataInfo}) => {
+  console.log(dataInfo, 'hello')
+
   return (
     <style.descriptionBox>
       <style.box1>
@@ -26,7 +28,7 @@ var Description = ({address, descriptionTxt, moreSpacesInfo}) => {
       </style.box1>
 
       <style.box2>
-      <MoreSpacesBox moreInfo={moreSpacesInfo}/>
+      <MoreSpacesBox data={dataInfo}/>
       </style.box2>
     </style.descriptionBox>
   )

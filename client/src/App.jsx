@@ -16,7 +16,7 @@ const App = () => {
   const [photos, setPhotos] = useState({});
   const [address, setAddress] = useState(null);
   const [descriptionTxt, setDescriptionTxt] = useState('');
-  const [moreSpacesInfo, setMoreSpacesInfo] = useState({});
+  const [moreSpacesInfo, setMoreSpacesInfo] = useState([]);
 
   useEffect(() => {
     axios.get('/api/carousal')
@@ -43,7 +43,7 @@ const App = () => {
         </style.buttonBar>
       </style.location>
       <Image_modal photos={photos}/>
-      <Description address={address} descriptionTxt={descriptionTxt} moreSpacesInfo={moreSpacesInfo}/>
+      <Description address={address} descriptionTxt={descriptionTxt} dataInfo={moreSpacesInfo}/>
       <Footer/>
     </style.mainContainer>
   )
