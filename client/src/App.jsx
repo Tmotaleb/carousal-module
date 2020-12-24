@@ -6,16 +6,17 @@ import * as style from '../public/styles/style.js';
 import Image_modal from './components/Image_modal.jsx';
 import NavBar from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
-import Description from './components/Description.jsx'
+import Description from './components/Description.jsx';
 import regeneratorRuntime from 'regenerator-runtime';
 import {VscHeart} from 'react-icons/Vsc';
 import {BiShareAlt} from 'react-icons/Bi';
 
 
 const App = () => {
-  const [photos, setPhotos] = useState({})
-  const [address, setAddress] = useState(null)
-  const [descriptionTxt, setDescriptionTxt] = useState('')
+  const [photos, setPhotos] = useState({});
+  const [address, setAddress] = useState(null);
+  const [descriptionTxt, setDescriptionTxt] = useState('');
+  const [moreSpacesInfo, setMoreSpacesInfo] = useState({});
 
   useEffect(() => {
     axios.get('/api/carousal')
@@ -23,7 +24,8 @@ const App = () => {
         console.log(response, 'rd')
         setPhotos(response.data.photos);
         setAddress(response.data.address);
-        setDescriptionTxt(response.data.descriptionTxt)
+        setDescriptionTxt(response.data.descriptionTxt);
+        setMoreSpacesInfo(response.data.moreSpacesInfo)
       })
       .catch((error) => {
         console.log(error)
@@ -41,7 +43,7 @@ const App = () => {
         </style.buttonBar>
       </style.location>
       <Image_modal photos={photos}/>
-      <Description address={address} descriptionTxt={descriptionTxt}/>
+      <Description address={address} descriptionTxt={descriptionTxt} moreSpacesInfo={moreSpacesInfo}/>
       <Footer/>
     </style.mainContainer>
   )

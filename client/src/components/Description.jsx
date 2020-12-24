@@ -4,20 +4,30 @@ import styled from 'styled-components';
 import regeneratorRuntime from 'regenerator-runtime';
 import DescriptionBox from './DescriptionBox.jsx';
 import Amenities from './Amenities.jsx';
+import MoreSpacesBox from './MoreSpacesBox.jsx';
 
 
-var Description = ({address, descriptionTxt}) => {
+var Description = ({address, descriptionTxt, moreSpacesInfo}) => {
   return (
     <style.descriptionBox>
-      <style.leftColumn>
-        <style.description>
-          <style.descriptionTitle>DESCRIPTION</style.descriptionTitle>
-          <style.descriptionTxt>{descriptionTxt}</style.descriptionTxt>
-        </style.description>
-        <DescriptionBox/>
-        <Amenities/>
-      </style.leftColumn>
-      <style.rightColumn></style.rightColumn>
+      <style.box1>
+        <style.leftColumn>
+          <style.description>
+            <style.descriptionTitle>DESCRIPTION</style.descriptionTitle>
+            <style.descriptionTxt>{descriptionTxt}</style.descriptionTxt>
+          </style.description>
+          <DescriptionBox/>
+          <Amenities/>
+        </style.leftColumn>
+
+        <style.rightColumn>
+          <style.bookingBox></style.bookingBox>
+        </style.rightColumn>
+      </style.box1>
+
+      <style.box2>
+      <MoreSpacesBox moreInfo={moreSpacesInfo}/>
+      </style.box2>
     </style.descriptionBox>
   )
 }

@@ -15,6 +15,7 @@ const CarousalSchema = new mongoose.Schema({
   address: String,
   photos: Array,
   descriptionTxt: String,
+  moreSpacesInfo: Array
 });
 
 const Carousal = mongoose.model('Carousal', CarousalSchema);
