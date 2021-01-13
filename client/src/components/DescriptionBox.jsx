@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import * as style from '../../public/styles/style.js';
 import styled from 'styled-components';
-import regeneratorRuntime from 'regenerator-runtime';
 
 var DescriptionBox = () => {
 

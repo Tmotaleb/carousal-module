@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import * as style from '../../public/styles/style.js';
 import styled from 'styled-components';
-import regeneratorRuntime from 'regenerator-runtime';
 import DescriptionBox from './DescriptionBox.jsx';
 import Amenities from './Amenities.jsx';
 import MoreSpacesBox from './MoreSpacesBox.jsx';

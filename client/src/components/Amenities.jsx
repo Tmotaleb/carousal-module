@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import * as style from '../../public/styles/style.js';
-import regeneratorRuntime from 'regenerator-runtime';
 import styled from 'styled-components';
 import {GrWifi} from 'react-icons/Gr';
 import {ImSpoonKnife} from 'react-icons/Im';
