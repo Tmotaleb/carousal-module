@@ -20,8 +20,6 @@ import { faPaw } from "@fortawesome/free-solid-svg-icons";
 
 var Amenities = () => {
 
-  var wifiIcon = "https://ddo0fzhfvians.cloudfront.net/uploads/icons/png/19796714791535956913-512.png"
-
   return (
 
   <style.amenitiesBox>
