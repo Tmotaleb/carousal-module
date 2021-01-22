@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import * as style from '../../public/styles/style.js';
-import styled from 'styled-components';
+
 
 var DescriptionBox = () => {
 
@@ -15,20 +14,20 @@ var DescriptionBox = () => {
   ]
 
   return (
-    <style.officeSlider>
-      <style.officeTitle>OFFICE ARRANGEMENTS</style.officeTitle>
-      <style.sliderContainer>
+    <div className='officeSlider'>
+      <div className='officeTitle'>OFFICE ARRANGEMENTS</div>
+      <div className='sliderContainer'>
         {items.map((item) =>
-          <style.items className='view'>
-            <style.itemIcon className='img' src={item.icon}></style.itemIcon>
+          <div className='items' id='view'>
+            <img className='itemIcon' id='itemIcon_img' src={item.icon}/>
               <div className='mask'>
                 <p>{item.description}</p>
               </div>
-            <style.itemDescription>{item.title}</style.itemDescription>
-          </style.items>
+            <div className='itemDescription'>{item.title}</div>
+          </div>
         )}
-      </style.sliderContainer>
-    </style.officeSlider>
+      </div>
+    </div>
   )
 }
 

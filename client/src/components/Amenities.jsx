@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import * as style from '../../public/styles/style.js';
-import styled from 'styled-components';
 import {GrWifi} from 'react-icons/Gr';
 import {ImSpoonKnife} from 'react-icons/Im';
 import {FaRegUser} from 'react-icons/Fa';
@@ -22,34 +20,34 @@ var Amenities = () => {
 
   return (
 
-  <style.amenitiesBox>
-    <style.amenitiesTitle>AMENITIES & SERVICES</style.amenitiesTitle>
-    <style.amenitiesContainer>
+  <div className='amenitiesBox'>
+    <div className='amenitiesTitle'>AMENITIES & SERVICES</div>
+    <div className='amenitiesContainer'>
 
-      <style.col1 className='col1-list'>
+      <ul className='col1-list'>
         <li><FontAwesomeIcon className='wifi-icon' icon={faWifi}/> Wifi</li>
         <li><FontAwesomeIcon className='wheelchair-icon' icon={faWheelchair}/> Accessibility</li>
         <li><ImSpoonKnife className='spoonKnife-icon'/> Kitchen</li>
         <li><FaRegUser className='user-icon'/> Onsite Staff</li>
-      </style.col1>
+      </ul>
 
-      <style.col2 className='col2-list'>
+      <ul className='col2-list'>
         <li><HiOutlineSparkles className='clean-icon' /> Enhanced Cleaning Service</li>
         <li><FaRegIdCard className='guest-icon'/> Guest Pass</li>
         <li><FiCoffee className='coffee-icon'/> Coffee/Tea</li>
         <li><BsDroplet className='drop-icon'/> Filtered Water</li>
-      </style.col2>
+      </ul>
 
-      <style.col3 className='col3-list'>
+      <ul className='col3-list'>
         <li><FontAwesomeIcon className='paw-icon' icon={faPaw} /> Pet Friendly</li>
         <li><AiOutlinePrinter className='printer-icon'/> Print/Scan/Copy</li>
         <li><GiSofa className='sofa-icon'/> Common Area</li>
         <li><FiPhoneCall className='phone-icon'/> Phone Booth</li>
-      </style.col3>
+      </ul>
 
-    </style.amenitiesContainer>
-    <style.amenities_btn>See All</style.amenities_btn>
-  </style.amenitiesBox>
+    </div>
+    <button className='amenities_btn'>See All</button>
+  </div>
   )
 }
 

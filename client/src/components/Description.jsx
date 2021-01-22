@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import * as style from '../../public/styles/style.js';
-import styled from 'styled-components';
 import DescriptionBox from './DescriptionBox.jsx';
 import Amenities from './Amenities.jsx';
 import MoreSpacesBox from './MoreSpacesBox.jsx';
@@ -10,26 +8,26 @@ var Description = ({address, descriptionTxt, dataInfo}) => {
   console.log(dataInfo, 'hello')
 
   return (
-    <style.descriptionBox>
-      <style.box1>
-        <style.leftColumn>
-          <style.description>
-            <style.descriptionTitle>DESCRIPTION</style.descriptionTitle>
-            <style.descriptionTxt>{descriptionTxt}</style.descriptionTxt>
-          </style.description>
+    <div className='descriptionBox'>
+      <div className='box1'>
+        <div className='leftColumn'>
+          <div className='description'>
+            <div className='descriptionTitle'>DESCRIPTION</div>
+            <div className='descriptionTxt'>{descriptionTxt}</div>
+          </div>
           <DescriptionBox/>
           <Amenities/>
-        </style.leftColumn>
+        </div>
 
-        <style.rightColumn>
-          <style.bookingBox></style.bookingBox>
-        </style.rightColumn>
-      </style.box1>
+        <div className='rightColumn'>
+          <div className='bookingBox'></div>
+        </div>
+      </div>
 
-      <style.box2>
+      <div className='box2'>
       <MoreSpacesBox data={dataInfo}/>
-      </style.box2>
-    </style.descriptionBox>
+      </div>
+    </div>
   )
 }
 

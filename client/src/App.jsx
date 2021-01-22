@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ReactDom from 'react-dom';
 import axios from 'axios';
-import styled from 'styled-components';
-import * as style from '../public/styles/style.js';
 import Image_modal from './components/Image_modal.jsx';
 import NavBar from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
@@ -33,19 +31,19 @@ const App = () => {
   }, []);
 
   return (
-    <style.mainContainer>
+    <div className='mainContainer'>
       <NavBar/>
-      <style.location>
-        <style.address>Space available at: {address}</style.address>
-        <style.buttonBar>
-          <style.saveButton><VscHeart className='heart-icon'/></style.saveButton>
-          <style.shareButton><BiShareAlt className='share-icon'/></style.shareButton>
-        </style.buttonBar>
-      </style.location>
+      <div className='location'>
+        <div className='address'>Space available at: {address}</div>
+        <div className='buttonBar'>
+          <div className='saveButton'><VscHeart className='heart-icon'/></div>
+          <div className='shareButton'><BiShareAlt className='share-icon'/></div>
+        </div>
+      </div>
       <Image_modal photos={photos}/>
       <Description address={address} descriptionTxt={descriptionTxt} dataInfo={moreSpacesInfo}/>
       <Footer/>
-    </style.mainContainer>
+    </div>
   )
 }
 

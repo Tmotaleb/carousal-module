@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import * as style from '../../public/styles/style.js';
-import styled from 'styled-components';
 
 
 var Footer = () => {
 
   return (
-    <style.footer>
+    <footer className='footer'>
     <ol>
       <ul className='footer-ul'>
         <li><a href='#' className='fa fa-facebook'></a></li>
@@ -25,7 +23,7 @@ var Footer = () => {
         </p>
         </li>
     </ol>
-    </style.footer>
+    </footer>
   )
 }
 
