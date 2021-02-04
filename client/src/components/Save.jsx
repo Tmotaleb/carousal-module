@@ -41,38 +41,31 @@ var Save = () => {
 
                 <button type='submit' class='registerbtn'>Register</button>
 
-                <p>I accept Work'n Treehouse's <a href='#'>Terms of Use</a> and <a href='#'>Privacry Policy.</a></p>
+                <p>I accept Work'n Treehouse's <a href='#' id='link'>Terms of Use</a> and <a href='#' id='link'>Privacy Policy.</a></p>
               </div>
 
                 <div className='social-col'>
-                  <a href='#' className='fb btn'>
-                    <SiFacebook className='facebook'/>Continue with Facebook
+                  <a href='https://www.facebook.com' className='fb btn'>
+                    <SiFacebook id='fi' className='facebook'/>Continue with Facebook
                   </a>
 
-                  <a href='#' className='twt btn'>
-                    <AiFillTwitterCircle className='twitter'/> Continue with Twitter
+                  <a href='https://twitter.com' className='twt btn'>
+                    <AiFillTwitterCircle className='twitter'/>Continue with Twitter
                   </a>
 
-                  <a href='#' className='gle btn'>
-                    <FcGoogle className='google'/> Continue with Google
+                  <a href='https://google.com' className='gle btn'>
+                    <FcGoogle className='google'/>Continue with Google
                   </a>
 
-
+                  <div className='contentainer signin'>
+                    <p>Already have an account?<a href='#' id='link'> Sign in</a></p>
+                  </div>
                 </div>
-
-              <div className='contentainer signin'>
-                <p>Already have an account? <a href='#'>Sign in</a>.</p>
-              </div>
-
             </form>
           </div>
-{/*
-          <button className='button' onClick={() => {close()}}>Close</button> */}
         </div>
       )
-
-      }
-
+    }
    </Popup>
   )
 }
