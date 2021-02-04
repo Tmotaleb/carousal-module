@@ -39,7 +39,7 @@ var Save = () => {
                 <label for='psw'><b>Password</b></label>
                 <input type='password' placeholder='Enter password, 8-15 characters' name='psw' id='psw' required/>
 
-                <button type='submit' class='registerbtn'>Register</button>
+                <input type='submit'  value='Register'/>
 
                 <p>I accept Work'n Treehouse's <a href='#' id='link'>Terms of Use</a> and <a href='#' id='link'>Privacy Policy.</a></p>
               </div>
