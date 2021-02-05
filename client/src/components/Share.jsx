@@ -1,5 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {HiShare} from 'react-icons/Hi';
+import {FaFacebookF} from 'react-icons/Fa';
+import {FaTwitter} from 'react-icons/Fa';
+
+import {FaInstagram} from 'react-icons/Fa';
+import {FaLinkedinIn} from 'react-icons/Fa';
+import {FaYoutube} from 'react-icons/Fa';
+
+import {FaPinterestP} from 'react-icons/Fa';
+
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
@@ -28,19 +37,33 @@ var Share = () => {
         </div>
 
         <div className='share-content'>
+
+          <div className='share-email-box'>
+            <form>
+              <label className='share-label' for='link'><b>Share workspace with:</b></label>
+
+              <input type='text' placeholder='Enter recipient email address' name='email' id='email' required/>
+
+              <input type='submit'  value='Share' className='share-it-btn'/>
+            </form>
+            </div>
+
            <ul className='share-ul'>
-            <li><p>Share via: </p></li>
-            <li><a href='#' id='share-icon' className='fa fa-facebook'></a></li>
+            <li><p className='shareVia'>Or share via: </p></li>
 
-            <li><a href='#' id='share-icon'  className='fa fa-twitter'></a></li>
+            <li><FaFacebookF href='#'
+            className='share-lnk fb-icon'/></li>
 
-            <li><a href='#' id='share-icon'  className='fa fa-linkedin'></a></li>
+            <li><FaTwitter href='#' className='share-lnk twitter-icon'/></li>
 
-            <li><a href='#' id='share-icon'  className='fa fa-instagram'></a></li>
+            <li><FaLinkedinIn href='#' className='share-lnk linkedin-icon'/></li>
 
-            <li><a href='#' id='share-icon'  className='fa fa-youtube'></a></li>
+            <li><FaInstagram href='#' className='share-lnk instagram-icon'/></li>
 
-            <li><a href='#' id='share-icon'  className='fa fa-pinterest'></a></li>
+            <li><FaYoutube href='#' className='share-lnk youtube-icon'/></li>
+
+            <li><FaPinterestP href='#' className='share-lnk pinterest-icon'/></li>
+
           </ul>
         </div>
       </div>
@@ -51,4 +74,3 @@ var Share = () => {
 }
 
 export default Share;
-
