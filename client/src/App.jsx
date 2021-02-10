@@ -22,7 +22,7 @@ const App = () => {
         setPhotos(response.data.photos);
         setAddress(response.data.address);
         setDescriptionTxt(response.data.descriptionTxt);
-        setMoreSpacesInfo(response.data.moreSpacesInfo)
+        setMoreSpacesInfo(response.data.moreSpacesInfo);
       })
       .catch((error) => {
         console.log(error)

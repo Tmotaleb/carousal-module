@@ -1,7 +1,7 @@
 const faker = require('faker');
-const {db, Carousal} = require('./index.js')
+const {db, Carousal} = require('./index.js');
 const {coffeeTable, studySpace, moreSpaces} = require('./photo.js');
-const method = require('./helper.js')
+const method = require('./helper.js');
 
 //Function to get a number of random images
 const randomImage = (arr, num) => {

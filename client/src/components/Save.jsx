@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, fetch} from 'react';
+import axios from 'axios';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import {ImHeart} from 'react-icons/Im';
@@ -8,9 +9,42 @@ import {SiFacebook} from 'react-icons/Si';
 import {AiFillTwitterCircle} from 'react-icons/Ai';
 import {FcGoogle} from 'react-icons/Fc';
 
-var Save = () => {
+const Save = () => {
   const [activeSave, setActiveSave] = useState(false);
   const toggle1 = () => setActiveSave(!activeSave);
+
+  const [formData, setFormData] = useState({
+    email:'',
+    password:''
+  });
+
+  const updateFormData = event => setFormData({
+    ...formData,
+    [event.target.name]: event.target.value
+  })
+
+  const { email, password } = formData;
+
+  const register = () => {
+    axios.post('/api/register', {
+      email: formData.email,
+      password: formData.password
+    })
+    .catch(() => {
+      console.log('Error with data posting')
+    })
+  }
+
+  // const submit = e => {
+  //   e.preventDefault();
+  //   fetch ('/api/register', {
+  //     method: 'POST',
+  //     body: JSON.stringify({user}),
+  //     headers: {'Content-Type': 'application/json'},
+  //   })
+  //     .then(res=> res.json())
+  //     .then(json => setUser(json.user))
+  // }
 
   return (
     <Popup trigger={
@@ -34,16 +68,36 @@ var Save = () => {
             <form>
               <div className='contentainer'>
                 <label for='email'><b>Email</b></label>
-                <input type='text' placeholder='Enter email address' name='email' id='email' required/>
+                <input
+                  type='email'
+                  value={email}
+                  onChange={e => updateFormData(e)}
+                  placeholder='Enter email address'
+                  name='email'
+                  required
+                  />
 
                 <label for='psw'><b>Password</b></label>
-                <input type='password' placeholder='Enter password, 8-15 characters' name='psw' id='psw' required/>
+                <input
+                  type='password'
+                  value={password}
+                  onChange={e => updateFormData(e)}
+                  placeholder='Enter password, 8-15 characters'
+                  name='password'
+                  required
+                  />
 
-                <input type='submit'  value='Register'/>
+  {console.log(formData)}
+
+                <input
+                  type='button'
+                  value='Register'
+                  onClick={register}
+                  />
 
                 <p>I accept Work'n Treehouse's <a href='#' id='link'>Terms of Use</a> and <a href='#' id='link'>Privacy Policy.</a></p>
               </div>
-
+              </form>
                 <div className='social-col'>
                   <a href='https://www.facebook.com' className='fb btn'>
                     <SiFacebook id='fi' className='facebook'/>Continue with Facebook
@@ -61,7 +115,6 @@ var Save = () => {
                     <p>Already have an account?<a href='#' id='link'> Sign in</a></p>
                   </div>
                 </div>
-            </form>
           </div>
         </div>
       )

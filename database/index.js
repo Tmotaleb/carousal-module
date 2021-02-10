@@ -10,7 +10,6 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', ()=> {console.log('Mongodb is running!')});
 
-
 const CarousalSchema = new mongoose.Schema({
   address: String,
   photos: Array,
@@ -20,5 +19,5 @@ const CarousalSchema = new mongoose.Schema({
 
 const Carousal = mongoose.model('Carousal', CarousalSchema);
 
-module.exports = {db, Carousal}
+module.exports = {Carousal}
 
