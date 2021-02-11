@@ -1,22 +1,39 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import {HiShare} from 'react-icons/Hi';
 import {FaFacebookF} from 'react-icons/Fa';
 import {FaTwitter} from 'react-icons/Fa';
-
 import {FaInstagram} from 'react-icons/Fa';
 import {FaLinkedinIn} from 'react-icons/Fa';
 import {FaYoutube} from 'react-icons/Fa';
-
 import {FaPinterestP} from 'react-icons/Fa';
-
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 var Share = () => {
 
   const [activeShare, setActiveShare] = useState(false);
+  const toggle2 = () => setActiveShare(!activeShare);
 
-  const toggle2 = () => setActiveShare(!activeShare)
+  const [shareData, setShareData] = useState({
+    email:''
+  })
+
+  const updataShareData = event => setShareData({
+    ...shareData,
+    [event.target.name]: event.target.value
+  })
+
+  const { email } = shareData;
+
+  const shareInfo = () => {
+    axios.post('/api/share', {
+      email: shareData.email
+    })
+    .catch(() => {
+      console.log('err with posting sghare')
+    })
+  }
 
   return (
     <Popup trigger={
@@ -42,11 +59,23 @@ var Share = () => {
             <form>
               <label className='share-label' for='link'><b>Share workspace with:</b></label>
 
-              <input type='text' placeholder='Enter recipient email address' name='email' id='email' required/>
+              <input
+              type='text'
+              placeholder='Enter recipient email address' name='email'
+              value={email}
+              onChange={e => updataShareData(e)}
+              required
+              />
 
-              <input type='submit'  value='Share' className='share-it-btn'/>
+              <input
+              type='submit'
+              value='Share'
+              onClick={shareInfo}
+              className='share-it-btn'/>
             </form>
             </div>
+
+{console.log(shareData)}
 
            <ul className='share-ul'>
             <li><p className='shareVia'>Or share via: </p></li>

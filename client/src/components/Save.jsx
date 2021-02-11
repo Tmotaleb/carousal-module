@@ -1,4 +1,4 @@
-import React, {useState, useEffect, fetch} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -34,17 +34,6 @@ const Save = () => {
       console.log('Error with data posting')
     })
   }
-
-  // const submit = e => {
-  //   e.preventDefault();
-  //   fetch ('/api/register', {
-  //     method: 'POST',
-  //     body: JSON.stringify({user}),
-  //     headers: {'Content-Type': 'application/json'},
-  //   })
-  //     .then(res=> res.json())
-  //     .then(json => setUser(json.user))
-  // }
 
   return (
     <Popup trigger={
@@ -90,7 +79,7 @@ const Save = () => {
   {console.log(formData)}
 
                 <input
-                  type='button'
+                  type='submit'
                   value='Register'
                   onClick={register}
                   />

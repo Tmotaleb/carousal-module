@@ -12,6 +12,7 @@ const url = 'mongodb://127.0.0.1:27017'
 const dbName = 'carousal-module'
 var db;
 
+//api GET request
 app.get('/api/carousal', (req, res) => {
   Carousal.findOne({})
     .then((results) => {
@@ -23,24 +24,41 @@ app.get('/api/carousal', (req, res) => {
     })
 })
 
-//Established a mongo connection to insert data to another collection
-app.post('/api/register', (req, res) => {
-  MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+//Established a mongo connection to insert user data to 'registryEntries' collection
+app.post('/api/register', async(req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, async(err, client) => {
     db = client.db(dbName);
-    db.collection('registryEntries').insertOne({
+    await db.collection('registryEntries').insertOne({
       email: req.body.email,
       password: req.body.password
     })
     .then((result) => {
       res.send(result)
-      console.log(result, 'sent data successfully')
+      console.log(result, 'Registered user successfully!')
     })
     .catch((err) => {
       console.log(err)
     })
-    client.close();
+    await client.close();
   })
 })
 
+//Established a mongo connection to insert recipient email data to 'recipientEmailEntries' collection
+app.post('/api/share', async(req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, async(err, client) => {
+    db = client.db(dbName);
+    await db.collection('recipientEmailEntries').insertOne({
+      recipientEmail: req.body.email,
+    })
+    .then((result) => {
+      res.send(result)
+      console.log(result, 'Recipient email saved successfully!')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+    await client.close();
+  })
+})
 
 module.exports = app;
