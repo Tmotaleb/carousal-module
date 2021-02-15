@@ -54,9 +54,9 @@ var Share = () => {
         </div>
 
         <div className='share-content'>
+          <form>
+            <div className='share-email-box'>
 
-          <div className='share-email-box'>
-            <form>
               <label className='share-label' for='link'><b>Share workspace with:</b></label>
 
               <input
@@ -72,10 +72,8 @@ var Share = () => {
               value='Share'
               onClick={shareInfo}
               className='share-it-btn'/>
-            </form>
             </div>
-
-{console.log(shareData)}
+          </form>
 
            <ul className='share-ul'>
             <li><p className='shareVia'>Or share via: </p></li>

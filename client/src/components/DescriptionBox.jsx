@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
 
-
 var DescriptionBox = () => {
 
   const items = [
@@ -12,7 +11,6 @@ var DescriptionBox = () => {
 
     {id: 4, title: 'Conference Room', icon: 'https://iconstorage.s3-us-west-1.amazonaws.com/office+icons/conferenceRoom2.png', description:'Book a room by the hour for a meeting with your clients and co-workers'}
   ]
-
 
   return (
     <div className='officeSlider'>

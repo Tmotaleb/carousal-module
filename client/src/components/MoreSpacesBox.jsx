@@ -2,7 +2,10 @@ import React, {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
+
 var MoreSpacesBox = ({data}) => {
+
+  data = data.slice(0, 4)
 
   return (
     <div className='morespaces'>

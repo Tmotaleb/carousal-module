@@ -49,7 +49,7 @@ const Save = () => {
           <button className='close' onClick={close}>&times;</button>
 
           <div className='header'>
-            <h1>Work'n Treehouse</h1>
+            <h1>TREEHOUSE</h1>
             <h3>Sign in or register to save your favorite workspaces</h3>
           </div>
 
@@ -76,15 +76,13 @@ const Save = () => {
                   required
                   />
 
-  {console.log(formData)}
-
                 <input
                   type='submit'
                   value='Register'
                   onClick={register}
                   />
 
-                <p>I accept Work'n Treehouse's <a href='#' id='link'>Terms of Use</a> and <a href='#' id='link'>Privacy Policy.</a></p>
+                <p>I accept Treehouse's<a href='#' id='link'>Terms of Use</a>and<a href='#' id='link'>Privacy Policy.</a></p>
               </div>
               </form>
                 <div className='social-col'>

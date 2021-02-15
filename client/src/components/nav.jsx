@@ -4,11 +4,9 @@ import {BsPerson} from 'react-icons/Bs';
 
 var NavBar = () => {
 
-  var img = 'https://mylogo-bucket.s3-us-west-1.amazonaws.com/newlogo-treehouse'
-
   return (
     <div className='navContainer'>
-      <img className='logo' src={img}/>
+      <a className='logo'><em>T</em>REEHOUSE.</a>
       <nav>
         <ul className='nav_links'>
           <li><a href='#'>Workspace</a></li>
