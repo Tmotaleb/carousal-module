@@ -22,6 +22,7 @@ const randomImage = (arr, num) => {
     var address = faker.address.streetAddress();
 
       var fakeData = {
+        id: i,
         address: address,
         photos: [spaceImage[0], spaceImage[1], spaceImage[2], spaceImage[3], spaceImage[4],spaceImage[5], spaceImage[6], spaceImage[7], spaceImage[8], spaceImage[9], spaceImage[10], spaceImage[11]],
         descriptionTxt: `Office space located at ${address}, with high ceilings and lots of natural lighting. We offer complementary high speed wifi, phone booth access, kitchen available with fridge, freezer, microwave, filtered water and unlimited coffee/tea. Members have access to roof deck, terrace and lounge areas. Conference rooms are fully equipped and on site upon request and for a limited time only.`,

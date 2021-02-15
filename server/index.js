@@ -13,9 +13,13 @@ const dbName = 'carousal-module'
 var db;
 
 //api GET request
-app.get('/api/carousal', (req, res) => {
-  Carousal.findOne({})
+app.get('/api/carousal/:id', async (req, res) => {
+  console.log(req, 'pram');
+  Carousal.findOne({id: req.params.id})
     .then((results) => {
+      if(!results) {
+        throw new Error;
+      }
       res.status(201).send(results);
     })
     .catch((err) => {
