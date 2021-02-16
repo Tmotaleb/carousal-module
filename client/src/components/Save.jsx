@@ -25,7 +25,8 @@ const Save = () => {
 
   const { email, password } = formData;
 
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault();
     axios.post('/api/register', {
       email: formData.email,
       password: formData.password

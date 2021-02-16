@@ -11,10 +11,6 @@ db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', ()=> {console.log('Mongodb is running!')});
 
 const CarousalSchema = new mongoose.Schema({
-  id: {
-    type: Number,
-    unique: true
-  },
   address: String,
   photos: Array,
   descriptionTxt: String,

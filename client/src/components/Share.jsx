@@ -26,7 +26,8 @@ var Share = () => {
 
   const { email } = shareData;
 
-  const shareInfo = () => {
+  const shareInfo = (e) => {
+    e.preventDefault();
     axios.post('/api/share', {
       email: shareData.email
     })

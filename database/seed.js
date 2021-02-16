@@ -3,26 +3,12 @@ const {db, Carousal} = require('./index.js');
 const {coffeeTable, studySpace, moreSpaces} = require('./photo.js');
 const method = require('./helper.js');
 
-//Function to get a number of random images
-const randomImage = (arr, num) => {
-  var storage = [];
-  for (var i = 0; i < arr.length; i++) {
-    var randomIndex = arr[Math.floor(Math.random() * arr.length)];
-    if (storage.includes(randomIndex)) {
-      continue;
-    }
-    storage.push(randomIndex);
-  }
-  return storage.slice(0, num);
-}
-
 //Generate 100 listings
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i <=5; i++) {
     var spaceImage = [...studySpace, ...coffeeTable];
     var address = faker.address.streetAddress();
 
       var fakeData = {
-        id: i,
         address: address,
         photos: [spaceImage[0], spaceImage[1], spaceImage[2], spaceImage[3], spaceImage[4],spaceImage[5], spaceImage[6], spaceImage[7], spaceImage[8], spaceImage[9], spaceImage[10], spaceImage[11]],
         descriptionTxt: `Office space located at ${address}, with high ceilings and lots of natural lighting. We offer complementary high speed wifi, phone booth access, kitchen available with fridge, freezer, microwave, filtered water and unlimited coffee/tea. Members have access to roof deck, terrace and lounge areas. Conference rooms are fully equipped and on site upon request and for a limited time only.`,
@@ -41,3 +27,4 @@ const randomImage = (arr, num) => {
 
 var listing = new Carousal(fakeData)
 method.saveData(listing);
+
