@@ -32,7 +32,7 @@ var Share = () => {
       email: shareData.email
     })
     .catch(() => {
-      console.log('err with posting sghare')
+      console.log('err with posting share')
     })
   }
 
