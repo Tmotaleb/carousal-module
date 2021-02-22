@@ -60,3 +60,27 @@ describe('Test POST request to the /api/register endpoint', ()=> {
     await User.deleteMany()
   })
 })
+
+describe('Test POST request to the /api/share endpoint', ()=> {
+
+  //Save user email and password to the database
+  it('Should save user email and password to database', async done => {
+    const res = await request.post('/api/share')
+    .send({
+      email:"testing123@gmail.com",
+    })
+
+     //Check to see if that user was saved to the User collection
+    const recipient = await Share.findOne({email:'testing123@gmail.com'})
+
+    //Confirm that the user has an email
+    expect(recipient.email).toBeTruthy()
+    expect(res.body.email).toBeTruthy()
+    done()
+  })
+
+  // Clean up the User collection after this test
+  afterEach(async () => {
+    await Share.deleteMany()
+  })
+})
