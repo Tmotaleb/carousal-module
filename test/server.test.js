@@ -1,4 +1,5 @@
 const app = require('../server');
+import 'regenerator-runtime/runtime';
 const supertest = require('supertest');
 const request = supertest(app);
 const {Carousal, User, Share} = require('../database/index.js');

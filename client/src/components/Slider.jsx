@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 const Slider = ({photos}) => {
-
-  const [slides] = useState(photos)
-
+  const [slides] = useState(photos);
   let [currentPosition, setCurrentPosition] = useState(0);
   let currentSlide = slides[currentPosition]
 
