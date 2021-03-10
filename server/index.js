@@ -1,9 +1,15 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const path = require('path');
+const compression = require('compression');
+const morgan = require('morgan');
 const app = express();
 const {Carousal, User, Share} = require('../database/index.js');
 
-app.use(express.static(__dirname + '/../client/public'));
+app.use(compression());
+app.use(morgan('tiny'));
+app.use(express.json());
+app.use(express.static(path.join(__dirname + '/../client/public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 

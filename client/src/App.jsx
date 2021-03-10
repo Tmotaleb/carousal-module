@@ -8,6 +8,7 @@ import Save from './components/Save.jsx';
 import Share from './components/Share.jsx'
 import Description from './components/Description.jsx';
 import regeneratorRuntime from 'regenerator-runtime';
+import '../public/style.css';
 
 const App = () => {
   const [photos, setPhotos] = useState({});
@@ -46,4 +47,4 @@ const App = () => {
   )
 }
 
-ReactDom.render(<App />, document.getElementById('app'));
+ReactDom.render(<App />, document.getElementById('carousal'));
